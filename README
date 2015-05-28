@@ -1,0 +1,59 @@
+This is an old unmaintained project migrated from sourceforge.
+(http://sourceforge.net/projects/brainfckpp/)
+
+====================================================
+	 Brainfuck++ aka bfpp interpreter
+====================================================
+Brainfuck interpreter with the proposed syntax from 
+
+www.jitunleashed.com/bf/index.html
+
+
+The ip syntax is to place the ip and port with the following syntax in the cells
+ip:port followed by null
+ie; 127.0.0.1:1221 will be represented as
+49 50 55 46 48 46 48 46 49 58 49 50 50 49 0
+
+We have introduced a few other instructions for a little more flexibility
+1. D
+2. =
+
+If in debug mode D( applied by the command line option -d) it prints
+the current pointer number, next 5 instructions, and asks the user for
+the range for memory dump and edit. If not in debug mode it skips the
+debug instruction.
+
+For multiline commenting we have added an = sign. anything b/w the = pairs,
+is considered comment.This was added to include the default
+instructions for commenting. Old commenting method is still retained.
+
+This interpreter has been tested working on GNU/Linux 
+and Microsoft Windows.
+
+====================================================
+		Using the interpreter
+====================================================
+
+After Installation you are straight away ready to run the interpreter.
+Write a program "test.b", Run it as:
+
+	$bfpp.rb test.b
+
+In debug mode
+	$bfpp.rb -d test.b
+
+====================================================
+		Problems That need to be fixed
+====================================================
+1. loop gets stuck at a 0 value in the 0th cell (traditional Bf code problems)
+2. odd number of = doesn't help out.
+3. The extra_key_junk has a problem with previous statemnts of no stdout.
+	
+====================================================
+		      Authors
+====================================================
+
+Abin Joy
+Cyriac Thomas Chittuthara
+Narayanan K
+Sandeep George Cherian
